@@ -16,25 +16,48 @@ export default async function Home() {
       {/* GLOW BACKGROUND */}
       <div style={styles.glow}></div>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section style={styles.hero}>
         <div style={styles.avatar}>🎤</div>
 
         <h1 style={styles.name}>Ayfasco</h1>
         <p style={styles.bio}>Afrobeats Artist • Producer • Music Creator 🔥</p>
 
-        {/* SOCIAL / STREAM BUTTONS */}
+        {/* SOCIAL BUTTONS */}
         <div style={styles.streamRow}>
-          <a style={styles.streamBtn} href="#">🎧 Audiomack</a>
-          <a style={styles.streamBtn} href="#">🎵 Spotify</a>
-          <a style={styles.streamBtn} href="#">▶ YouTube</a>
-          <a 
-            style={styles.streamBtn} 
-            href="https://wa.me/2349126347822" 
+
+          <a
+            style={styles.streamBtn}
+            href="https://audiomack.com/ayfasco"
+            target="_blank"
+          >
+            🎧 Audiomack
+          </a>
+
+          <a
+            style={styles.streamBtn}
+            href="https://tiktok.com/@ayfascoyen"
+            target="_blank"
+          >
+            🎵 TikTok
+          </a>
+
+          <a
+            style={styles.streamBtn}
+            href="#"
+            target="_blank"
+          >
+            🎵 Spotify
+          </a>
+
+          <a
+            style={styles.streamBtn}
+            href="https://wa.me/2349126347822"
             target="_blank"
           >
             💬 WhatsApp
           </a>
+
         </div>
       </section>
 
@@ -187,4 +210,3 @@ const styles: any = {
     color: "#555"
   }
 };
-  
