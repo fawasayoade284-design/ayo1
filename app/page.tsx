@@ -1,15 +1,17 @@
 export default async function Home() {
-  let data = [];
+  let data: any[] = [];
 
   try {
     const res = await fetch(
       "https://opensheet.elk.sh/1qwtUjm1ghhxuBK_urQZntHKaKKbH8eAeOT6m23__W0Y/Sheet1",
-      { cache: "no-store" }
+      {
+        cache: "no-store",
+      }
     );
 
     data = await res.json();
   } catch (error) {
-    console.log("Fetch error:", error);
+    console.error(error);
   }
 
   return (
@@ -18,9 +20,9 @@ export default async function Home() {
 
       {data.length === 0 && <p>No data found</p>}
 
-      {data.map((item, i) => (
+      {data.map((item: any, i: number) => (
         <div key={i} style={{ margin: "10px 0" }}>
-          <a href={item.link} target="_blank">
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
             👉 {item.name}
           </a>
         </div>
