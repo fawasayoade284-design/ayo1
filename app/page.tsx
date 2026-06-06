@@ -1,13 +1,16 @@
-
-export default async function Home() {
+async function getData() {
   const res = await fetch("https://opensheet.elk.sh/1qwtUjm1ghhxuBK_urQZntHKaKKbH8eAeOT6m23__W0Y/Sheet1", {
     cache: "no-store"
   });
 
-  const data = await res.json();
+  return res.json();
+}
+
+export default async function Home() {
+  const data = await getData();
 
   return (
-    <div style={{ padding: 20, fontFamily: "Arial" }}>
+    <main style={{ padding: 25, fontFamily: "Arial" }}>
       <h1>My Links 🔥</h1>
 
       {data.map((item, i) => (
@@ -17,6 +20,6 @@ export default async function Home() {
           </a>
         </div>
       ))}
-    </div>
+    </main>
   );
 }
