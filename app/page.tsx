@@ -4,29 +4,41 @@ export default async function Home() {
   try {
     const res = await fetch(
       "https://opensheet.elk.sh/1qwtUjm1ghhxuBK_urQZntHKaKKbH8eAeOT6m23__W0Y/Sheet1",
-      {
-        cache: "no-store",
-      }
+      { cache: "no-store" }
     );
 
     data = await res.json();
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 
   return (
-    <main style={{ padding: 25, fontFamily: "Arial" }}>
-      <h1>My Links 🔥</h1>
+    <main style={{ fontFamily: "Arial", padding: 25, textAlign: "center" }}>
+      
+      <h1 style={{ fontSize: 32 }}>🎵 Ayfasco</h1>
+      <p style={{ color: "gray" }}>Official music & links page</p>
 
-      {data.length === 0 && <p>No data found</p>}
+      <hr style={{ margin: "20px 0" }} />
+
+      <h2>🔥 My Links</h2>
 
       {data.map((item: any, i: number) => (
-        <div key={i} style={{ margin: "10px 0" }}>
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
-            👉 {item.name}
+        <div key={i} style={{ margin: "12px 0" }}>
+          <a
+            href={item.link}
+            target="_blank"
+            style={{
+              display: "block",
+              padding: "12px",
+              borderRadius: "10px",
+              border: "1px solid #ddd",
+              textDecoration: "none",
+              color: "black"
+            }}
+          >
+            {item.name}
           </a>
         </div>
       ))}
+
     </main>
   );
 }
